@@ -1,0 +1,93 @@
+---
+title: "Commands"
+description: "A reference of Warden slash commands by permission level."
+---
+
+> Use this page to find which commands are available to Staff, Admin, Management, and server administrators.
+
+Commands may also be available via prefix (default **`w!`**) depending on your server setup. This list focuses on slash commands.
+
+<Note>
+This list may not include every command. Run **`/help`** in your server for the most up-to-date list.
+</Note>
+
+## Server administrator
+
+These commands require **Server Administrator** permission in Discord:
+
+- **`/config`** — Open the module configuration panel
+- **`/prefix`** — Change the bot prefix for your server
+- **`/forceverify`** — Force-verify a linked user and apply verified roles
+
+## Management role
+
+These commands require a configured **Management** role (or Server Administrator):
+
+- **`/session start`** — Start a roleplay session
+- **`/session vote`** — Create a session start vote
+- **`/session end`** — End the current session
+- **`/session full`** — Send the server full notification
+- **`/session boost`** — Send the space-available notification
+- **`/infraction issue`** — Issue a staff infraction
+- **`/infraction list`** — View a staff member's infractions
+- **`/infraction manage`** — Manage a specific infraction by ID
+- **`/erlc link`** — Link your ER:LC API key
+- **`/erlc unlink`** — Unlink your ER:LC API key
+
+## Admin role
+
+These commands require a configured **Admin** role (or higher):
+
+- **`/punishment manage`** — Manage an existing in-game punishment by ID
+- **`/shift admin`** — Manage another staff member's shifts
+- **`/shift quota reset`** — Reset shift quota data for a shift type
+- **`/shift quota status`** — View quota status for all staff
+
+## Staff role
+
+These commands require a configured **Staff** role (or higher):
+
+- **`/punish`** — Issue a warn, kick, ban, or ban BOLO in-game
+- **`/punishments view`** — View punishments for a Roblox username
+- **`/bolo active`** — View all active BOLOs
+- **`/shift manage`** — Clock in, take a break, or clock out
+- **`/shift time`** — View shift time for yourself or another member
+- **`/shift active`** — View who is currently on duty
+- **`/shift leaderboard`** — View the shift leaderboard
+- **`/application pending`** — View pending application submissions
+- **`/application manage`** — View a member's application history
+
+## All members
+
+These commands are available to any server member (when the relevant module is enabled):
+
+- **`/verify`** — Link and verify your Roblox account
+- **`/unverify`** — Remove your verification from the server
+- **`/apply`** — Submit an application
+- **`/feedback submit`** — Submit staff feedback with a rating
+- **`/feedback list`** — View feedback for a staff member
+- **`/whois`** — Look up Discord or Roblox account info
+- **`/help`** — View available commands
+- **`/ping`** — Check Warden's latency
+- **`/invite`** — Get Warden's invite link
+
+## ER:LC commands
+
+Available when your server is linked via **`/erlc link`**. Most require Staff role or higher:
+
+| Command | Description |
+| --- | --- |
+| **`/erlc info`** | View in-game server information |
+| **`/erlc players`** | List players currently in-game |
+| **`/erlc execute`** | Run an in-game command (for example, `:m message`) |
+| **`/erlc check`** | Check if in-game players are in the Discord server |
+| **`/erlc logs`** | View recent command logs |
+| **`/erlc kills`** | View recent kill logs |
+| **`/erlc joins`** | View recent join logs |
+| **`/erlc bans`** | Search server bans |
+| **`/erlc modcalls`** | View recent modcalls |
+| **`/erlc vehicles`** | List spawned vehicles |
+| **`/erlc team`** | View players on a specific team |
+| **`/erlc queue`** | View the player queue |
+| **`/erlc calls`** | View recent 911 calls |
+| **`/erlc player`** | View detailed info about a player |

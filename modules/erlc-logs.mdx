@@ -3,7 +3,17 @@ title: "ER:LC Server Logs"
 description: "Configure real-time join, leave, kill, modcall, and command logs."
 ---
 
+> Stay informed with real-time tracking of command logs, player joins and leaves, kill logs, and modcall logs — all streamed to Discord automatically.
+
 The **ER:LC Server Logs** module streams in-game events to Discord in real time — player joins, leaves, kills, modcalls, and command usage.
+
+<Note>
+Requires [ER:LC integration](/configuration/erlc-integration). Logs are sent automatically once configured — no manual commands needed.
+</Note>
+
+## Related commands
+
+Use **`/erlc logs`**, **`/erlc joins`**, **`/erlc kills`**, and **`/erlc modcalls`** to view recent in-game events on demand. See [Commands](/configuration/commands#erlc-commands).
 
 ## How to configure
 
@@ -55,7 +65,7 @@ Join and leave logs support these placeholders:
 - `{time:T}` — Long time
 - `{time:R}` — Relative time (for example, "5 minutes ago")
 
-Kill, modcall, and command logs use similar variable patterns with context-specific fields like `{killer}`, `{killed}`, `{command}`, and `{moderator}`.
+Kill, modcall, and command logs use similar variable patterns. See [Variables](/configuration/variables#erlc-server-logs) for the full reference.
 
 <Tip>
 Click **Save** after editing a log type. Changes are not applied until you save.

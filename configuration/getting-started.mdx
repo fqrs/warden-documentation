@@ -1,0 +1,61 @@
+---
+title: "Getting started"
+description: "Learn how to set up Warden and enable modules for your server."
+---
+
+Follow these steps to get Warden running on your ER:LC Discord server.
+
+## Prerequisites
+
+Before configuring modules, make sure you have:
+
+- **Server Administrator** permission in your Discord server
+- Warden [invited](https://discord.com/oauth2/authorize?client_id=1506630562113130657) with the required permissions
+- An ER:LC private server **API key** if you plan to use moderation, logs, or sessions — see [ER:LC integration](/configuration/erlc-integration)
+
+## How to enable modules
+
+<Steps>
+  <Step title="Open the config panel">
+    Run **`/config`** or **`w!config`** in your server.
+  </Step>
+  <Step title="Select a module">
+    Use the **Select a module to configure...** dropdown at the bottom of the panel.
+  </Step>
+  <Step title="Enable the module">
+    Most modules have an **Enable / Disable** toggle. Set the module to **Enabled** before using its features.
+  </Step>
+  <Step title="Set required channels and roles">
+    Each module prompts you to pick channels, roles, or other options. Configure these before going live.
+  </Step>
+</Steps>
+
+## Module configuration
+
+Once a module is enabled, you can return to its settings at any time:
+
+1. Run **`/config`** or **`w!config`**
+2. Select the module from the dropdown
+3. Update channels, roles, embeds, or advanced options
+4. Save where prompted (some flows, like shift types and log messages, require clicking **Save**)
+
+## Recommended setup order
+
+<Steps>
+  <Step title="Permissions">
+    Set [Staff, Admin, and Management roles](/modules/permissions) first — other modules depend on them.
+  </Step>
+  <Step title="ER:LC integration">
+    Link your server with [`/erlc link`](/configuration/erlc-integration).
+  </Step>
+  <Step title="Core modules">
+    Enable the modules your server needs: moderation, verification, shifts, logs, sessions, and more.
+  </Step>
+  <Step title="Test commands">
+    Use the [commands reference](/configuration/commands) to verify everything works.
+  </Step>
+</Steps>
+
+<Tip>
+New to Warden? Read through each section of the documentation to familiarize yourself with the features. Join the [Support Server](https://discord.gg/9mKPyknj8z) for help, updates, and community discussions.
+</Tip>

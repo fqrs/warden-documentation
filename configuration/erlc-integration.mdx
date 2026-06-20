@@ -1,0 +1,58 @@
+---
+title: "ER:LC integration"
+description: "Link your ER:LC private server API key to Warden."
+---
+
+> Link your ER:LC private server so Warden can moderate in-game, stream logs, run sessions, and execute server commands from Discord.
+
+Many Warden modules require an active ER:LC API connection. Without it, moderation, server logs, and session announcements will not work.
+
+## Link your server
+
+<Steps>
+  <Step title="Get your API key">
+    Join your ER:LC private server, open server settings, and copy your **API key**. You need the **API gamepass** enabled on your account before you can generate a key.
+  </Step>
+  <Step title="Run the link command">
+    In Discord, run:
+
+    ```
+    /erlc link api_key:YOUR_API_KEY
+    ```
+
+    Only users with **Server Administrator** or **Management** roles can link the server.
+  </Step>
+  <Step title="Verify the connection">
+    Run **`/erlc info`** to confirm Warden can reach your in-game server.
+  </Step>
+</Steps>
+
+## Unlink your server
+
+To remove the API connection:
+
+```
+/erlc unlink
+```
+
+## What requires integration?
+
+| Feature | Requires API |
+| --- | --- |
+| Roblox Moderation (`/punish`) | Yes |
+| ER:LC Server Logs | Yes |
+| Sessions (start / vote / end) | Yes |
+| `/erlc` commands (players, execute, etc.) | Yes |
+| Shift Logging | No |
+| Verification | No |
+| Infractions | No |
+| Staff Feedback | No |
+| Applications | No |
+
+## Related commands
+
+See the full [`/erlc`](/configuration/commands#erlc-commands) command list for in-game server management tools.
+
+<Warning>
+Keep your API key private. Never share it in public channels. If your key is exposed, regenerate it in ER:LC and run `/erlc link` again with the new key.
+</Warning>

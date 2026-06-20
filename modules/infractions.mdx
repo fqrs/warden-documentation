@@ -3,7 +3,26 @@ title: "Infractions"
 description: "Configure staff infractions, channels, embeds, and approval settings."
 ---
 
+> Track staff rule violations efficiently and keep all disciplinary logs centralized in one place.
+
 The **Infractions** module lets you issue and track disciplinary actions against staff who violate your team's rules.
+
+## Commands
+
+- **`/infraction issue`** — Issue an infraction to a staff member *(Management)*
+- **`/infraction list`** — View infractions for a staff member *(Management)*
+- **`/infraction manage`** — View and manage a specific infraction by ID *(Management)*
+
+## Default infraction types
+
+| Type |
+| --- |
+| Activity Notice |
+| Verbal Warning |
+| Warning |
+| Strike |
+| Demotion |
+| Termination |
 
 ## How to configure
 
@@ -45,4 +64,4 @@ Open **Configure other options...** → **Customise Embed** to edit the infracti
 | **Description** | Staff member, infraction type, and reason |
 | **Thumbnail** | `{issuer.icon}` |
 
-Supported variables include `{staff.mention}`, `{infraction.type}`, `{infraction.reason}`, and `{issuer.name}`.
+See [Variables](/configuration/variables#infractions) for the full list of supported placeholders.

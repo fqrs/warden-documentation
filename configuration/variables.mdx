@@ -1,0 +1,117 @@
+---
+title: "Variables"
+description: "Placeholder variables for embeds, logs, and custom messages."
+---
+
+> Use these placeholders in customizable embeds and log messages. Warden replaces them with live data when a message is sent.
+
+## Time
+
+Available in infractions, feedback, sessions, and ER:LC log messages:
+
+| Variable | Output |
+| --- | --- |
+| `{time}` | Short date and time |
+| `{time:f}` | Short date and time (alternate format) |
+| `{time:F}` | Long date and time |
+| `{time:d}` | Short date |
+| `{time:D}` | Long date |
+| `{time:t}` | Short time |
+| `{time:T}` | Long time |
+| `{time:R}` | Relative time (for example, "5 minutes ago") |
+
+## Discord server
+
+| Variable | Output |
+| --- | --- |
+| `{guild.name}` | Your Discord server name |
+| `{guild.id}` | Your Discord server ID |
+| `{guild.icon}` | Your Discord server icon URL |
+
+## Infractions
+
+Use in infraction embed customization:
+
+| Variable | Output |
+| --- | --- |
+| `{staff.mention}` | Mention of the infracted staff member |
+| `{staff.username}` | Staff member's Discord username |
+| `{staff.name}` | Staff member's display name |
+| `{staff.id}` | Staff member's Discord ID |
+| `{staff.icon}` | Staff member's avatar URL |
+| `{issuer.mention}` | Mention of the person who issued the infraction |
+| `{issuer.username}` | Issuer's Discord username |
+| `{issuer.name}` | Issuer's display name |
+| `{issuer.id}` | Issuer's Discord ID |
+| `{issuer.icon}` | Issuer's avatar URL |
+| `{infraction.type}` | Infraction type (for example, Warning) |
+| `{infraction.reason}` | Reason for the infraction |
+
+## Staff feedback
+
+Use in feedback embed customization:
+
+| Variable | Output |
+| --- | --- |
+| `{staff.mention}` | Mention of the staff member being reviewed |
+| `{staff.username}` | Staff member's Discord username |
+| `{staff.name}` | Staff member's display name |
+| `{staff.id}` | Staff member's Discord ID |
+| `{staff.icon}` | Staff member's avatar URL |
+| `{submitter.mention}` | Mention of the person submitting feedback |
+| `{submitter.username}` | Submitter's Discord username |
+| `{submitter.name}` | Submitter's display name |
+| `{submitter.id}` | Submitter's Discord ID |
+| `{submitter.icon}` | Submitter's avatar URL |
+| `{feedback.rating}` | Star rating given |
+| `{feedback.reason}` | Feedback reason text |
+
+## Sessions
+
+Use in session announcement embeds:
+
+**ER:LC server**
+
+| Variable | Output |
+| --- | --- |
+| `{erlc.code}` / `{server.code}` | In-game server join code |
+| `{erlc.name}` / `{server.name}` | In-game server name |
+| `{erlc.owner}` / `{server.owner}` | Server owner |
+| `{server.restrictions}` | Account verification requirements |
+| `{server.teambalance}` | Team balance status |
+| `{server.coowners}` | Server co-owners |
+
+**Discord**
+
+| Variable | Output |
+| --- | --- |
+| `{host}` | Mention of the session host |
+| `{host.username}` | Session host's username |
+| `{host.id}` | Session host's Discord ID |
+| `{guild.name}` | Discord server name |
+| `{guild.id}` | Discord server ID |
+| `{guild.icon}` | Discord server icon URL |
+
+## ER:LC server logs
+
+Use in join, leave, kill, modcall, and command log messages:
+
+**Player**
+
+| Variable | Output |
+| --- | --- |
+| `{player.name}` | Roblox username |
+| `{player.id}` | Roblox user ID |
+| `{player.hyperlink}` | Clickable Roblox profile link |
+
+Kill logs also support `{killer}` and `{killed}` variants. Modcall logs support `{moderator}` and `{caller}`. Command logs support `{command}`.
+
+## Verification
+
+| Variable | Output |
+| --- | --- |
+| `{roblox.username}` | Verified Roblox username |
+| `{roblox.displayUser}` | Roblox display name |
+| `{roblox.id}` | Roblox user ID |
+
+Used for verified nickname formatting when that option is enabled.

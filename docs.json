@@ -14,13 +14,22 @@
         "group": "Getting Started",
         "pages": [
           "index",
+          "configuration/getting-started",
           "modules/configuration"
+        ]
+      },
+      {
+        "group": "Configuration",
+        "pages": [
+          "configuration/erlc-integration",
+          "configuration/commands",
+          "configuration/variables",
+          "modules/permissions"
         ]
       },
       {
         "group": "Modules",
         "pages": [
-          "modules/permissions",
           "modules/roblox-moderation",
           "modules/verification",
           "modules/shift-logging",
@@ -43,6 +52,11 @@
           "anchor": "Support Server",
           "href": "https://discord.gg/9mKPyknj8z",
           "icon": "life-ring"
+        },
+        {
+          "anchor": "Website",
+          "href": "https://wrdnbot.xyz",
+          "icon": "globe"
         }
       ]
     }
