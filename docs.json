@@ -4,18 +4,9 @@
   "name": "Warden",
   "description": "Documentation for Warden — the Discord bot built for ER:LC community management.",
   "colors": {
-    "primary": "#3646F5",
+    "primary": "#2E3CEB",
     "light": "#6B8CFF",
     "dark": "#1D29C4"
-  },
-  "appearance": {
-    "default": "dark"
-  },
-  "fonts": {
-    "family": "Inter",
-    "heading": {
-      "family": "Inter"
-    }
   },
   "favicon": "/favicon.png",
   "navigation": {
@@ -80,6 +71,10 @@
       {
         "label": "Website",
         "href": "https://wrdnbot.xyz"
+      },
+      {
+        "label": "Support Server",
+        "href": "https://discord.gg/9mKPyknj8z"
       }
     ],
     "primary": {
