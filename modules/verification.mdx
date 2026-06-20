@@ -1,40 +1,47 @@
 ---
 title: "Verification"
-description: "Configure Roblox account verification, roles, and verification methods."
+description: "Link Discord members to Roblox accounts and control access with roles."
 ---
 
-> Link Discord accounts to Roblox profiles so you can gate your community, confirm identities, and keep impersonators out.
-
-The **Verification** module links Discord accounts to Roblox profiles so you can gate your community and confirm member identities.
+Verification answers a simple question: *Is this Discord member the Roblox player they claim to be?* Once linked, Warden can assign verified roles, strip unverified access, and optionally rename members to their Roblox username.
 
 ## Commands
 
-- **`/verify`** — Link and verify your Roblox account *(All members)*
-- **`/unverify`** — Remove your verification *(All members)*
-- **`/forceverify`** — Force-verify a user and apply roles *(Server Administrator)*
+| Command | Who | Purpose |
+| --- | --- | --- |
+| **`/verify`** | Everyone | Start or complete verification |
+| **`/unverify`** | Everyone | Remove your own link |
+| **`/forceverify`** | Server Administrator | Manually verify someone and apply roles |
 
-## How to configure
+## Setup walkthrough
 
-1. Run **`/config`** or **`w!config`**
-2. Select **Verification**
-3. Enable the module and assign verified and unverified roles
-4. Choose a verification type under **Select a Verification Type...**
+<Steps>
+  <Step title="Enable the module">
+    **`/config`** → **Verification** → **Enabled**.
+  </Step>
+  <Step title="Set roles">
+    Pick **Verified Role(s)** (granted after success) and **Unverified Role(s)** (held until verified). Up to 10 roles each.
+  </Step>
+  <Step title="Choose a flow">
+    Open **Select a Verification Type...** and pick how members verify (see below).
+  </Step>
+</Steps>
 
-## Settings
+## Verification flows
 
-| Setting | Description |
-| --- | --- |
-| **Module State** | Enable or disable the module. |
-| **Verified Role(s)** | Roles assigned after a member verifies. Up to 10 roles. |
-| **Unverified Role(s)** | Roles assigned to members who have not verified yet. Up to 10 roles. |
+<Tabs>
+  <Tab title="Default Verification">
+    Members verify in a channel you designate. Set the channel in config, then post the verification prompt from the same flow. Good when you want a dedicated `#verify` area.
+  </Tab>
+  <Tab title="Verify On Join">
+    New joins get prompted automatically. Good when you want zero manual channel setup and immediate gating.
+  </Tab>
+</Tabs>
 
-## Verification types
+## Nicknames
 
-| Type | Description |
-| --- | --- |
-| **Default Verification** | Members verify through a dedicated verification channel. Set the channel and post the verification message from the config flow. |
-| **Verify On Join** | Members are prompted to verify automatically when they join the Discord server. |
+The default verified nickname pattern is `{roblox.username}`. Additional nickname and embed options may expand in future releases — watch the config panel for new toggles after updates.
 
 <Note>
-The verified nickname format defaults to `{roblox.username}`. Additional nickname and embed customization options may be available in future updates.
+  Verification does not require [ER:LC integration](/configuration/erlc-integration). It uses Roblox OAuth only.
 </Note>

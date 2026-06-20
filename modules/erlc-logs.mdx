@@ -1,72 +1,43 @@
 ---
 title: "ER:LC Server Logs"
-description: "Configure real-time join, leave, kill, modcall, and command logs."
+description: "Mirror in-game activity to Discord channels in real time."
 ---
 
-> Stay informed with real-time tracking of command logs, player joins and leaves, kill logs, and modcall logs — all streamed to Discord automatically.
+Once [ER:LC is linked](/configuration/erlc-integration), Warden can forward player activity to Discord as it happens — no one needs to run a command for each event.
 
-The **ER:LC Server Logs** module streams in-game events to Discord in real time — player joins, leaves, kills, modcalls, and command usage.
+Need a snapshot on demand? Staff can still pull recent history with **`/erlc logs`**, **`/erlc joins`**, **`/erlc kills`**, and **`/erlc modcalls`**. See [Commands](/configuration/commands#erlc-server).
 
-<Note>
-Requires [ER:LC integration](/configuration/erlc-integration). Logs are sent automatically once configured — no manual commands needed.
-</Note>
+## Log categories
 
-## Related commands
+Each type is configured independently under **`/config`** → **ER:LC Server Logs** → **Edit configuration options...**
 
-Use **`/erlc logs`**, **`/erlc joins`**, **`/erlc kills`**, and **`/erlc modcalls`** to view recent in-game events on demand. See [Commands](/configuration/commands#erlc-commands).
-
-## How to configure
-
-1. Run **`/config`** or **`w!config`**
-2. Select **ER:LC Server Logs**
-3. Use **Edit configuration options...** to configure each log type individually
-
-## Log types
-
-Each log type can be configured separately with these options:
-
-| Log type | Default message |
+| Category | Default message idea |
 | --- | --- |
-| **Join Logs** | Player joined the server |
-| **Leave Logs** | Player left the server |
-| **Kill Logs** | Killer killed a player |
-| **Modcall Logs** | Moderator responded to a modcall |
-| **Command Logs** | Player used an in-game command |
+| **Join Logs** | Someone entered the server |
+| **Leave Logs** | Someone left |
+| **Kill Logs** | Kill event between players |
+| **Modcall Logs** | Staff responded to a modcall |
+| **Command Logs** | Player ran an in-game command |
 
-## Per-log settings
+## Per-category options
 
-When editing a log type, you can configure:
+<Steps>
+  <Step title="Enable or pause">
+    Toggle each log type without affecting the others.
+  </Step>
+  <Step title="Route to a channel">
+    Pick the Discord text channel for that event stream.
+  </Step>
+  <Step title="Customize the line">
+    Edit the message template and insert placeholders from **Variables**.
+  </Step>
+  <Step title="Save">
+    Click **Save** — unsaved template edits are discarded if you navigate away.
+  </Step>
+</Steps>
 
-| Setting | Description |
-| --- | --- |
-| **Enable / Disable** | Turn the log type on or off. |
-| **Log Channel** | Text channel where logs are sent. |
-| **Edit Message** | Customize the log message template. |
-| **Variables** | View available placeholders for your message. |
+## Placeholders
 
-## Message variables
+Join and leave templates commonly use `{player.name}`, `{player.id}`, and `{player.hyperlink}` plus any `{time…}` format from [Variables](/configuration/variables).
 
-Join and leave logs support these placeholders:
-
-**Player**
-
-- `{player.name}` — Roblox username
-- `{player.id}` — Roblox user ID
-- `{player.hyperlink}` — Clickable player link
-
-**Time**
-
-- `{time}` — Short date and time
-- `{time:f}` — Short date and time (alternate format)
-- `{time:F}` — Long date and time
-- `{time:d}` — Short date
-- `{time:D}` — Long date
-- `{time:t}` — Short time
-- `{time:T}` — Long time
-- `{time:R}` — Relative time (for example, "5 minutes ago")
-
-Kill, modcall, and command logs use similar variable patterns. See [Variables](/configuration/variables#erlc-server-logs) for the full reference.
-
-<Tip>
-Click **Save** after editing a log type. Changes are not applied until you save.
-</Tip>
+Kill, modcall, and command templates add context-specific tokens — `{killer}`, `{killed}`, `{moderator}`, `{caller}`, `{command}`, and others. The in-panel **Variables** button lists what each log type supports.

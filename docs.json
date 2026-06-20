@@ -2,16 +2,34 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "Warden",
+  "description": "Documentation for Warden — the Discord bot built for ER:LC community management.",
   "colors": {
-    "primary": "#2E3CEB",
+    "primary": "#3646F5",
     "light": "#6B8CFF",
     "dark": "#1D29C4"
+  },
+  "appearance": {
+    "default": "dark",
+    "strict": true
+  },
+  "background": {
+    "decoration": "gradient",
+    "color": {
+      "light": "#3646F5",
+      "dark": "#1D29C4"
+    }
+  },
+  "fonts": {
+    "family": "Inter",
+    "heading": {
+      "family": "Inter"
+    }
   },
   "favicon": "/favicon.png",
   "navigation": {
     "pages": [
       {
-        "group": "Getting Started",
+        "group": "Getting started",
         "pages": [
           "index",
           "configuration/getting-started",
@@ -19,7 +37,7 @@
         ]
       },
       {
-        "group": "Configuration",
+        "group": "Setup & reference",
         "pages": [
           "configuration/erlc-integration",
           "configuration/commands",
@@ -30,14 +48,24 @@
       {
         "group": "Modules",
         "pages": [
-          "modules/roblox-moderation",
-          "modules/verification",
-          "modules/shift-logging",
-          "modules/erlc-logs",
-          "modules/sessions",
-          "modules/infractions",
-          "modules/staff-feedback",
-          "modules/applications"
+          {
+            "group": "In-game & live ops",
+            "pages": [
+              "modules/roblox-moderation",
+              "modules/erlc-logs",
+              "modules/sessions"
+            ]
+          },
+          {
+            "group": "Staff & community",
+            "pages": [
+              "modules/shift-logging",
+              "modules/infractions",
+              "modules/staff-feedback",
+              "modules/verification",
+              "modules/applications"
+            ]
+          }
         ]
       }
     ],
@@ -67,6 +95,10 @@
   },
   "navbar": {
     "links": [
+      {
+        "label": "Website",
+        "href": "https://wrdnbot.xyz"
+      },
       {
         "label": "Support Server",
         "href": "https://discord.gg/9mKPyknj8z"

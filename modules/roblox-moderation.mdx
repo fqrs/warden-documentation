@@ -1,38 +1,47 @@
 ---
 title: "Roblox Moderation"
-description: "Configure in-game moderation, logging, and player notifications."
+description: "In-game warns, kicks, bans, and BOLOs triggered from Discord."
 ---
 
-> Issue warns, kicks, and bans directly in your ER:LC server from Discord — with centralized moderation logs and optional in-game player notifications.
+Give staff a single place to act on rule-breakers. Actions execute in your ER:LC private server and optionally post to a moderation log channel in Discord.
 
-The **Roblox Moderation** module lets your staff punish rule-breakers directly in your ER:LC private server from Discord.
+<Warning>
+  [Link ER:LC](/configuration/erlc-integration) before enabling this module — punishments are sent through the private server API.
+</Warning>
 
-<Note>
-Requires [ER:LC integration](/configuration/erlc-integration) before use.
-</Note>
+## Staff commands
 
-## Commands
+| Command | Access | Action |
+| --- | --- | --- |
+| **`/punish`** | Staff | Warn, kick, ban, or ban BOLO |
+| **`/punishments view`** | Staff | History for a Roblox username |
+| **`/bolo active`** | Staff | Active BOLO list |
+| **`/punishment manage`** | Admin | Update or remove by punishment ID |
 
-- **`/punish`** — Issue a warn, kick, ban, or ban BOLO to a Roblox username *(Staff)*
-- **`/punishments view`** — View punishment history for a player *(Staff)*
-- **`/punishment manage`** — Manage an existing punishment by ID *(Admin)*
-- **`/bolo active`** — View all active BOLOs *(Staff)*
+## Enable in /config
 
-## How to configure
+<Steps>
+  <Step title="Select Roblox Moderation">
+    **`/config`** → **Roblox Moderation** → set **Module State** to **Enabled**.
+  </Step>
+  <Step title="Pick a log channel">
+    Choose where moderation actions should appear in Discord.
+  </Step>
+  <Step title="Optional: in-game alerts">
+    Under **Configure other options...**, toggle **Notify Users on Moderation** if warned players should see an in-game notification.
+  </Step>
+</Steps>
 
-1. Run **`/config`** or **`w!config`**
-2. Select **Roblox Moderation**
-3. Enable the module and set your logging channel
-4. Optionally configure **Notify Users on Moderation** under **Configure other options...**
+## Settings reference
 
-## Settings
-
-| Setting | Description |
-| --- | --- |
-| **Module State** | Enable or disable the module. |
-| **Logging Channel** | Text channel where moderation actions are logged. |
-| **Notify Users on Moderation** | When enabled, players receive an **in-game notification** when they are warned through Warden's ER:LC API integration. |
-
-<Tip>
-Set up your ER:LC API connection before using moderation. Warden needs API access to issue punishments in-game.
-</Tip>
+<AccordionGroup>
+  <Accordion title="Module State">
+    Master switch for the entire moderation feature set.
+  </Accordion>
+  <Accordion title="Logging Channel">
+    Discord text channel that receives a record of each action staff take through Warden.
+  </Accordion>
+  <Accordion title="Notify Users on Moderation">
+    When on, players warned via Warden receive an in-game notification through the ER:LC API.
+  </Accordion>
+</AccordionGroup>

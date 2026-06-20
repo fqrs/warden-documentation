@@ -1,40 +1,43 @@
 ---
 title: "Staff Feedback"
-description: "Configure the staff feedback channel and module settings."
+description: "Let members rate staff and leave written feedback in Discord."
 ---
 
-> Collect feedback directly from your members to identify areas of success and those requiring improvement.
-
-The **Staff Feedback** module lets server members submit structured feedback on staff members.
+Feedback gives your community a structured voice. Submissions land in a channel you choose, with star ratings and reasons staff leadership can review over time.
 
 ## Commands
 
-- **`/feedback submit`** — Give a staff member a star rating and reason *(All members)*
-- **`/feedback list`** — View feedback ratings for a staff member *(All members)*
-- **`/feedback remove`** — Remove a feedback entry by ID *(Staff)*
-
-## How to configure
-
-1. Run **`/config`** or **`w!config`**
-2. Select **Staff Feedback**
-3. Enable the module and set a **Feedbacks Channel**
-
-## Settings
-
-| Setting | Description |
+| Command | Access |
 | --- | --- |
-| **Module State** | Enable or disable the module. |
-| **Feedbacks Channel** | Text channel where submitted feedback is posted. |
+| **`/feedback submit`** | Any member — rate and comment |
+| **`/feedback list`** | Any member — view someone's ratings |
+| **`/feedback remove`** | Staff — delete an entry by ID |
 
-## Default embed
+## Turn it on
 
-Feedback submissions use an embed with these defaults:
+<Steps>
+  <Step title="Enable">
+    **`/config`** → **Staff Feedback** → **Enabled**.
+  </Step>
+  <Step title="Pick a channel">
+    Set **Feedbacks Channel** — this is where submissions appear.
+  </Step>
+  <Step title="Test">
+    Run **`/feedback submit`** with a test account to confirm formatting looks right.
+  </Step>
+</Steps>
+
+## Default submission embed
 
 | Field | Default |
 | --- | --- |
-| **Color** | `#656dff` |
-| **Author Name** | `@{submitter.name}` |
-| **Title** | Staff Feedback |
-| **Description** | Staff member, rating, and reason |
+| Color | `#656dff` |
+| Author | `@{submitter.name}` |
+| Title | Staff Feedback |
+| Body | Staff target, star rating, reason |
 
-Supported variables include `{staff.mention}`, `{feedback.rating}`, and `{feedback.reason}`.
+Common placeholders: `{staff.mention}`, `{feedback.rating}`, `{feedback.reason}`. See [Variables](/configuration/variables) for the full set.
+
+<Tip>
+  Pair feedback with [Shift Logging](/modules/shift-logging) and [Infractions](/modules/infractions) for a fuller picture of staff performance — feedback captures member sentiment, not hours or discipline.
+</Tip>

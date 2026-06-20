@@ -1,67 +1,66 @@
 ---
 title: "Infractions"
-description: "Configure staff infractions, channels, embeds, and approval settings."
+description: "Internal staff discipline with logging, DMs, and optional approval."
 ---
 
-> Track staff rule violations efficiently and keep all disciplinary logs centralized in one place.
-
-The **Infractions** module lets you issue and track disciplinary actions against staff who violate your team's rules.
+Infractions are for *your team*, not in-game players. Management documents warnings, strikes, and terminations with a paper trail in Discord — optionally gated behind approval and custom embeds.
 
 ## Commands
 
-- **`/infraction issue`** — Issue an infraction to a staff member *(Management)*
-- **`/infraction list`** — View infractions for a staff member *(Management)*
-- **`/infraction manage`** — View and manage a specific infraction by ID *(Management)*
+All require **Management** (or Server Administrator):
 
-## Default infraction types
+- **`/infraction issue`** — Create a new record
+- **`/infraction list`** — View someone's history
+- **`/infraction manage`** — Open a specific infraction by ID
 
-| Type |
-| --- |
-| Activity Notice |
-| Verbal Warning |
-| Warning |
-| Strike |
-| Demotion |
-| Termination |
+## Built-in types
 
-## How to configure
+Warden ships with these defaults (customization may vary by plan):
 
-1. Run **`/config`** or **`w!config`**
-2. Select **Infractions**
-3. Enable the module and set your channels
-4. Use **Customise Embed** or **Options** for advanced settings
+Activity Notice · Verbal Warning · Warning · Strike · Demotion · Termination
 
-## Module settings
+## Configuration map
 
-| Setting | Description |
+<Steps>
+  <Step title="Channels">
+    Set **Infractions Channel** (public staff record) and **Infraction Audit Logs** (history/audit).
+  </Step>
+  <Step title="Behavior toggles">
+    **Configure other options...** → **Options** — DMs, confirmation prompts, approval, issuer visibility.
+  </Step>
+  <Step title="Embed branding">
+    **Configure other options...** → **Customise Embed** — colors, author line, title, description, thumbnail.
+  </Step>
+</Steps>
+
+## Options explained
+
+<AccordionGroup>
+  <Accordion title="Notify On Infractions">
+    DMs the staff member when an infraction is issued.
+  </Accordion>
+  <Accordion title="Notify On Voided Infractions">
+    DMs when an infraction is voided.
+  </Accordion>
+  <Accordion title="Infraction Confirmation">
+    Adds a confirmation step before issuing.
+  </Accordion>
+  <Accordion title="Require Approval">
+    Holds the infraction until a **Management** role approves it.
+  </Accordion>
+  <Accordion title="Show Infraction Issuer">
+    Adds a button revealing who issued the action.
+  </Accordion>
+</AccordionGroup>
+
+## Default embed snapshot
+
+| Field | Starting value |
 | --- | --- |
-| **Module State** | Enable or disable the module. |
-| **Infractions Channel** | Text channel where infraction records are posted. |
-| **Infraction Audit Logs** | Text channel for audit/history logs. |
-| **Infraction Types** | Default types: Activity Notice, Verbal Warning, Warning, Strike, Demotion, Termination. |
+| Color | `#2b2d31` |
+| Author | `Infracted by: {issuer.name}` |
+| Title | `Staff Disciplinary Action` |
+| Description | Staff member, type, and reason |
+| Thumbnail | `{issuer.icon}` |
 
-## Options
-
-Open **Configure other options...** → **Options**:
-
-| Setting | Description |
-| --- | --- |
-| **Notify On Infractions** | DM staff members when they receive an infraction. |
-| **Notify On Voided Infractions** | DM staff members when their infraction is voided. |
-| **Infraction Confirmation** | Show a confirmation prompt before issuing an infraction. |
-| **Require Approval** | Require Management role approval before an infraction is issued. |
-| **Show Infraction Issuer** | Display a button showing who issued the infraction. |
-
-## Customize embed
-
-Open **Configure other options...** → **Customise Embed** to edit the infraction announcement embed:
-
-| Field | Default |
-| --- | --- |
-| **Color** | `#2b2d31` |
-| **Author Name** | `Infracted by: {issuer.name}` |
-| **Title** | `Staff Disciplinary Action` |
-| **Description** | Staff member, infraction type, and reason |
-| **Thumbnail** | `{issuer.icon}` |
-
-See [Variables](/configuration/variables#infractions) for the full list of supported placeholders.
+Full placeholder list: [Variables → Infractions](/configuration/variables).

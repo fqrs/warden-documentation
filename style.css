@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
+
+:root {
+  --warden-bg: #2e3ceb;
+  --warden-blue: #3646f5;
+  --warden-blue-mid: #2b3ae2;
+  --warden-blue-dark: #1d29c4;
+  --warden-accent: #6b8cff;
+  --warden-text: #ffffff;
+  --warden-text-muted: rgba(255, 255, 255, 0.75);
+  --warden-glass-bg: rgba(255, 255, 255, 0.06);
+  --warden-glass-border: rgba(255, 255, 255, 0.12);
+  --warden-glass-strong: rgba(255, 255, 255, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#background-color {
+  background:
+    radial-gradient(
+      circle at 88% 18%,
+      rgba(255, 145, 115, 0.42) 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 12% 20%,
+      rgba(120, 150, 255, 0.6) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 50% 75%,
+      rgba(90, 110, 255, 0.5) 0%,
+      transparent 60%
+    ),
+    linear-gradient(
+      135deg,
+      var(--warden-blue) 0%,
+      var(--warden-blue-mid) 50%,
+      var(--warden-blue-dark) 100%
+    ) !important;
+}
+
+#background-color::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+  pointer-events: none;
+}
+
+html[data-current-path="/"] #page-title {
+  display: none;
+}
+
+#navbar {
+  background: rgba(46, 60, 235, 0.55) !important;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#sidebar {
+  background: rgba(255, 255, 255, 0.04) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#content-area {
+  background: transparent !important;
+}
+
+#table-of-contents {
+  background: transparent !important;
+}
+
+#page-title {
+  color: var(--warden-text);
+  letter-spacing: -0.02em;
+}
+
+#content,
+mdx-content {
+  color: var(--warden-text-muted);
+}
+
+#content h2,
+#content h3,
+#content h4,
+mdx-content h2,
+mdx-content h3,
+mdx-content h4 {
+  color: var(--warden-text);
+}
+
+link,
+#content a:not([data-component-name]),
+mdx-content a {
+  color: var(--warden-accent);
+}
+
+link:hover,
+#content a:not([data-component-name]):hover,
+mdx-content a:hover {
+  color: #9cb4ff;
+}
+
+card {
+  background: var(--warden-glass-bg) !important;
+  border: 1px solid var(--warden-glass-border) !important;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+card:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.22) !important;
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+callout {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+accordion {
+  background: var(--warden-glass-bg) !important;
+  border: 1px solid var(--warden-glass-border) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+frame {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+}
+
+#topbar-cta-button {
+  background: #ffffff !important;
+  color: #212bb0 !important;
+  border: 2px solid #ffffff !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+}
+
+#topbar-cta-button:hover {
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.3);
+}
+
+navbar-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+navbar-link:hover {
+  color: #ffffff !important;
+}
+
+#sidebar-content li[data-active] {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-radius: 8px;
+}
+
+toc-item[data-active] {
+  color: var(--warden-accent) !important;
+}
+
+code-block {
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+#footer,
+footer {
+  background: rgba(15, 18, 36, 0.35) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.warden-hero {
+  margin: 0 0 2.5rem;
+  padding: 2rem 2.25rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.2),
+    0 0 80px rgba(54, 70, 245, 0.15);
+}
+
+.warden-pill {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.warden-hero-title {
+  margin: 0 0 1rem;
+  color: #ffffff;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.warden-hero-title em {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.warden-hero-text {
+  margin: 0;
+  max-width: 42rem;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.warden-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin: 2rem 0 0;
+  padding: 1.25rem 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.warden-stat {
+  padding: 0 1.25rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.warden-stat:last-child {
+  border-right: none;
+}
+
+.warden-stat-value {
+  display: block;
+  color: #ffffff;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.warden-stat-label {
+  display: block;
+  margin-top: 0.25rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.8125rem;
+}
+
+@media (max-width: 640px) {
+  .warden-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .warden-stat {
+    padding: 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+  }
+
+  .warden-stat:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}

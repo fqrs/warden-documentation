@@ -1,68 +1,63 @@
 ---
 title: "Applications"
-description: "Configure application channels, forms, reviewers, and posting."
+description: "Custom application forms with DM submissions and reviewer actions."
 ---
 
-> Create custom application forms so members can apply via DMs, and reviewers can accept or deny with one click.
-
-The **Applications** module lets you create custom application forms. Members submit answers via DMs, and reviewers accept or deny from Discord.
+Build hiring or onboarding flows without a third-party form site. Members answer in DMs; reviewers accept or deny from Discord with roles applied automatically on acceptance.
 
 ## Commands
 
-- **`/apply`** — Submit an application *(All members)*
-- **`/application pending`** — View pending submissions *(Staff)*
-- **`/application manage`** — View a member's application history *(Staff)*
-
-## How to configure
-
-1. Run **`/config`** or **`w!config`**
-2. Select **Applications**
-3. Enable the module and set your channels
-4. Choose **Button** or **Select Menu** as the apply method
-5. Use **Configure applications...** to create and manage forms
-
-## Module settings
-
-| Setting | Description |
+| Command | Who runs it |
 | --- | --- |
-| **Module State** | Enable or disable the module. |
-| **Logging Channel** | Text channel where application submissions and review actions are logged. |
-| **Application Channel** | Text channel where the apply button or select menu is posted. |
-| **Apply Method** | **Button** or **Select Menu** — how members choose which application to fill out. |
-| **Reviewer Roles** | Roles that can review applications. Defaults to Management roles if not set. |
+| **`/apply`** | Applicants |
+| **`/application pending`** | Staff — queue of open submissions |
+| **`/application manage`** | Staff — history for a member |
 
-## Configure applications
+## Setup flow
 
-Use **Configure applications...** for these actions:
+<Steps>
+  <Step title="Enable and wire channels">
+    Turn on the module, then set **Logging Channel** (audit trail) and **Application Channel** (where the apply UI lives).
+  </Step>
+  <Step title="Choose apply UI">
+    **Button** — one application per message. **Select Menu** — dropdown when you run multiple forms.
+  </Step>
+  <Step title="Create a form">
+    **Configure applications...** → **Create an Application** — name, questions, role rules.
+  </Step>
+  <Step title="Publish">
+    **Post / Update Applications** pushes the button or menu into your application channel.
+  </Step>
+</Steps>
 
-| Action | Description |
+## Module-level settings
+
+| Setting | Notes |
 | --- | --- |
-| **Create an Application** | Build a new application with custom questions. |
-| **Applications List** | View all configured applications. |
-| **Applications** | Edit an existing application's settings. |
-| **Reviewer Roles** | Set which roles can review submissions. |
-| **Post / Update Applications** | Post or refresh the apply message in your application channel. |
-| **Duplicate Application (Warden+)** | Copy an existing application (Warden+ only). |
-| **Remove an Application** | Delete an application. |
+| **Reviewer Roles** | Who can accept/deny. Falls back to Management if unset. |
+| **Apply Method** | Button vs. select menu |
 
-## Per-application settings
+## Per-application fields
 
-Each application supports:
+<AccordionGroup>
+  <Accordion title="Basics">
+    **Name**, **Description**, **Questions** (with minimum length), **Is Open** toggle.
+  </Accordion>
+  <Accordion title="Roles">
+    **Required Roles** to apply · **Accept Roles** granted on approval · **Alert Roles** pinged on new submissions · **Reviewer Roles** for this form only.
+  </Accordion>
+  <Accordion title="Limits & reminders">
+    **Deny Cooldown** before reapply · **Pending Reminder** for idle reviewers · **Accept Limit** cap on approvals.
+  </Accordion>
+  <Accordion title="Management actions">
+    From **Configure applications...**:
 
-| Field | Description |
-| --- | --- |
-| **Name** | Display name shown on the apply button or menu. |
-| **Description** | Optional description for the application. |
-| **Questions** | Custom questions with minimum length requirements. |
-| **Alert Roles** | Roles pinged when a new submission arrives. |
-| **Accept Roles** | Roles assigned when an applicant is accepted. |
-| **Required Roles** | Roles a member must have to apply. |
-| **Reviewer Roles** | Roles that can review this specific application. |
-| **Is Open** | Whether the application is currently accepting submissions. |
-| **Deny Cooldown** | Days and hours before a denied applicant can reapply. |
-| **Pending Reminder** | Days before reviewers get a reminder about pending submissions. |
-| **Accept Limit** | Maximum number of acceptances allowed. |
+    - **Applications List** / **Applications** — browse and edit
+    - **Duplicate Application** — Warden+ only
+    - **Remove an Application** — delete a form
+  </Accordion>
+</AccordionGroup>
 
 <Note>
-The number of applications you can create depends on your plan. The config panel shows your current count (for example, `2/5`).
+  Your plan caps how many applications you can create. The config panel shows usage like `2/5`.
 </Note>

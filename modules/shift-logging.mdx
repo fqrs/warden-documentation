@@ -1,59 +1,58 @@
 ---
 title: "Shift Logging"
-description: "Configure shift types, logging channels, and on-duty tracking."
+description: "Track on-duty staff, quotas, and shift hours inside Discord."
 ---
 
-> Let staff effortlessly log their hours, track quotas, and see a live list of who is currently on duty — no spreadsheets required.
+Replace manual hour spreadsheets with clock-in/out commands. Leadership sees who is active, how hours stack up, and whether quotas are met — all from Discord.
 
-The **Shift Logging** module (shown as **Shifts** in the config menu) lets staff clock in, take breaks, and clock out while giving you a live view of who is on duty.
+In **`/config`**, this module appears as **Shifts**.
 
-## Commands
+## Commands by role
 
-- **`/shift manage`** — Clock in, take a break, or clock out *(Staff)*
-- **`/shift time`** — View shift hours for yourself or another member *(Staff)*
-- **`/shift active`** — See who is currently on duty *(Staff)*
-- **`/shift leaderboard`** — View the top staff by shift time *(Staff)*
-- **`/shift admin`** — Manage another member's shift *(Admin)*
-- **`/shift quota reset`** — Reset quota data for a shift type *(Admin)*
-- **`/shift quota status`** — View quota completion for all staff *(Admin)*
+<Tabs>
+  <Tab title="Staff">
+    - **`/shift manage`** — Clock in, start a break, or clock out
+    - **`/shift time`** — Hours for you or another member
+    - **`/shift active`** — Live on-duty roster
+    - **`/shift leaderboard`** — Ranked by total hours
+  </Tab>
+  <Tab title="Admin">
+    - **`/shift admin`** — Override another member's shift state
+    - **`/shift quota reset`** — Clear quota progress for a shift type
+    - **`/shift quota status`** — Quota completion across staff
+  </Tab>
+</Tabs>
 
-## How to configure
+## Base module settings
 
-1. Run **`/config`** or **`w!config`**
-2. Select **Shifts**
-3. Enable the module and set a **Logging Channel**
-4. Use **Configure options...** to manage shift types
-
-## Module settings
-
-| Setting | Description |
+| Setting | What it controls |
 | --- | --- |
-| **Module State** | Enable or disable the module. |
-| **Logging Channel** | Text channel where shift events are logged. |
+| **Module State** | On/off for shift tracking |
+| **Logging Channel** | Where clock events are posted |
 
 ## Shift types
 
-Use **Configure options...** to manage shift types:
+Open **Configure options...** to create the roles your server actually uses — Moderation, Dispatch, Training, and so on.
 
-| Action | Description |
-| --- | --- |
-| **Add Shift Type** | Create a new shift type with custom settings. |
-| **Edit Shift Type** | Modify an existing shift type. |
-| **Remove Shift Type** | Delete a shift type. |
-| **Shift Type List** | View all configured shift types. |
-
-Each shift type supports these fields:
-
-| Field | Description |
-| --- | --- |
-| **Shift Name** | Display name for the shift type (for example, Moderator). |
-| **Quota** | Required hours per period (for example, `10h`, `2d`). |
-| **Staff Limit** | Maximum number of staff allowed on duty at once. |
-| **Nickname Prefix** | Prefix added to a member's nickname while on duty. |
-| **Required Roles** | Roles a member must have to use this shift type. |
-| **On Duty Role** | Role assigned while the member is on duty. |
-| **Break Role** | Role assigned while the member is on break. |
-
-<Note>
-Free servers can configure up to **3** shift types. **Warden+** servers can configure up to **10** shift types.
-</Note>
+<AccordionGroup>
+  <Accordion title="Managing types">
+    - **Add Shift Type** — Create a new category
+    - **Edit Shift Type** — Change an existing one
+    - **Remove Shift Type** — Delete a category
+    - **Shift Type List** — Overview of everything configured
+  </Accordion>
+  <Accordion title="Fields on each type">
+    | Field | Example / notes |
+    | --- | --- |
+    | **Shift Name** | `Moderator` |
+    | **Quota** | `10h` or `2d` — required hours per period |
+    | **Staff Limit** | Cap concurrent on-duty staff |
+    | **Nickname Prefix** | Prefix while clocked in |
+    | **Required Roles** | Who may use this type |
+    | **On Duty Role** | Applied during active shift |
+    | **Break Role** | Applied during breaks |
+  </Accordion>
+  <Accordion title="Plan limits">
+    Free servers: up to **3** shift types. **Warden+**: up to **10**. The config panel shows your current count.
+  </Accordion>
+</AccordionGroup>

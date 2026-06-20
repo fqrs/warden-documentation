@@ -1,69 +1,112 @@
 ---
-title: "Introduction"
-description: "Learn how to streamline management tasks with Warden."
+title: "Documentation"
+description: "Documentation for Warden — the Discord bot built for ER:LC community management."
 ---
 
-> Warden is a Discord management bot built to simplify staff operations, moderation workflows, and automation for ER:LC communities.
+<div className="warden-hero">
+  <span className="warden-pill">Built for ease of use</span>
+  <h1 className="warden-hero-title">
+    Run your ER:LC server like a <em>fortress.</em>
+  </h1>
+  <p className="warden-hero-text">
+    Warden connects Discord to your ER:LC private server — moderation, verification,
+    shift logging, sessions, infractions, applications, and live logs in one place.
+  </p>
+  <div className="warden-stats">
+    <div className="warden-stat">
+      <span className="warden-stat-value">50+</span>
+      <span className="warden-stat-label">Servers</span>
+    </div>
+    <div className="warden-stat">
+      <span className="warden-stat-value">3.5K+</span>
+      <span className="warden-stat-label">Users reached</span>
+    </div>
+    <div className="warden-stat">
+      <span className="warden-stat-value">8</span>
+      <span className="warden-stat-label">Modules</span>
+    </div>
+  </div>
+</div>
 
-**Warden** helps server owners and administrators stay organized by centralizing tools like in-game moderation, shift logging, session management, infractions, applications, and live ER:LC logs — all configurable in just a few clicks.
+<Card title="Invite Warden" icon="discord" href="https://discord.com/oauth2/authorize?client_id=1506630562113130657">
+  Add Warden to your server, then open **`/config`** to turn on the modules you need.
+</Card>
 
-## What can you do with Warden?
+## Choose your path
 
-- **Punish** players for breaking server rules directly from Discord
-- Track staff _performance_ and activity with **Shift Logging**
-- Stay _informed_ with real-time **In-Game Logs** — command logs, join/leave logs, modcall logs, and kill logs
-- Manage your **Sessions** with start votes, announcements, and automation
-- Manage **Staff Infractions** with approval flows and custom embeds
-- Collect **Staff Feedback** and run custom **Applications**
-
-## Get started
-
-If you're new to Warden, we recommend reading through each section of the documentation to familiarize yourself with its features.
-
-<CardGroup cols={2}>
-  <Card title="Getting started" icon="rocket" href="/configuration/getting-started">
-    Set up Warden and enable your first modules.
+<CardGroup cols={3}>
+  <Card title="First-time setup" icon="rocket" href="/configuration/getting-started">
+    Invite the bot, assign roles, and link your ER:LC API key.
   </Card>
-  <Card title="Configuration" icon="gear" href="/modules/configuration">
-    Open the in-Discord config panel with `/config` or `w!config`.
+  <Card title="Configure modules" icon="sliders" href="/modules/configuration">
+    Every setting lives in Discord — no external dashboard.
   </Card>
-  <Card title="ER:LC integration" icon="link" href="/configuration/erlc-integration">
-    Link your private server API key for moderation and logs.
-  </Card>
-  <Card title="Commands" icon="terminal" href="/configuration/commands">
-    Browse slash commands by Staff, Admin, and Management role.
+  <Card title="Command lookup" icon="book" href="/configuration/commands">
+    See what each staff tier can run at a glance.
   </Card>
 </CardGroup>
 
-## Modules
+## Built for ER:LC servers
 
-<CardGroup cols={2}>
-  <Card title="Roblox Moderation" icon="shield" href="/modules/roblox-moderation">
-    Punish rule-breakers in your ER:LC server from Discord.
-  </Card>
-  <Card title="Verification" icon="id-card" href="/modules/verification">
-    Link Discord accounts to Roblox profiles.
-  </Card>
-  <Card title="Shift Logging" icon="clock" href="/modules/shift-logging">
-    Track staff hours, quotas, and on-duty status.
-  </Card>
-  <Card title="ER:LC Server Logs" icon="list" href="/modules/erlc-logs">
-    Stream joins, leaves, kills, modcalls, and commands live.
-  </Card>
-  <Card title="Sessions" icon="calendar" href="/modules/sessions">
-    Start, poll, and announce roleplay sessions.
-  </Card>
-  <Card title="Infractions" icon="scale-balanced" href="/modules/infractions">
-    Document staff rule violations with a clear paper trail.
-  </Card>
-  <Card title="Staff Feedback" icon="star" href="/modules/staff-feedback">
-    Collect ratings and feedback on your staff team.
-  </Card>
-  <Card title="Applications" icon="file-text" href="/modules/applications">
-    Run custom application forms with review workflows.
-  </Card>
-</CardGroup>
+Warden is designed around how ER:LC communities actually operate: in-game moderation from Discord, live server telemetry, session announcements, and internal staff tooling in one place.
+
+```mermaid
+flowchart LR
+  Discord["Your Discord server"] --> Warden["Warden"]
+  Warden --> ERLC["ER:LC private server"]
+  Warden --> Staff["Staff workflows"]
+  Warden --> Members["Member-facing tools"]
+```
+
+## Feature areas
+
+<Tabs>
+  <Tab title="In-game & live ops">
+    <CardGroup cols={2}>
+      <Card title="Roblox Moderation" icon="gavel" href="/modules/roblox-moderation">
+        Warn, kick, and ban players without opening the in-game mod panel.
+      </Card>
+      <Card title="ER:LC Server Logs" icon="wave-pulse" href="/modules/erlc-logs">
+        Pipe joins, kills, modcalls, and commands into Discord channels.
+      </Card>
+      <Card title="Sessions" icon="megaphone" href="/modules/sessions">
+        Poll, start, and announce roleplay sessions with custom embeds.
+      </Card>
+      <Card title="ER:LC integration" icon="plug" href="/configuration/erlc-integration">
+        Connect your private server API key — required for the modules above.
+      </Card>
+    </CardGroup>
+  </Tab>
+  <Tab title="Staff & accountability">
+    <CardGroup cols={2}>
+      <Card title="Shift Logging" icon="timer" href="/modules/shift-logging">
+        Clock in/out, enforce quotas, and see who is on duty right now.
+      </Card>
+      <Card title="Infractions" icon="clipboard-list" href="/modules/infractions">
+        Record staff discipline with optional management approval.
+      </Card>
+      <Card title="Staff Feedback" icon="message-smile" href="/modules/staff-feedback">
+        Let members rate staff and leave structured comments.
+      </Card>
+      <Card title="Permissions" icon="user-shield" href="/modules/permissions">
+        Map Staff, Admin, and Management roles once — every module respects them.
+      </Card>
+    </CardGroup>
+  </Tab>
+  <Tab title="Community access">
+    <CardGroup cols={2}>
+      <Card title="Verification" icon="badge-check" href="/modules/verification">
+        Tie Discord accounts to Roblox profiles before granting access.
+      </Card>
+      <Card title="Applications" icon="inbox" href="/modules/applications">
+        Build custom forms with DM-based submissions and one-click review.
+      </Card>
+    </CardGroup>
+  </Tab>
+</Tabs>
+
+## Need a hand?
 
 <Tip>
-Join the [Support Server](https://discord.gg/9mKPyknj8z) for help, updates, and community discussions.
+  Stuck on setup or unsure which module to enable first? Join the [Support Server](https://discord.gg/9mKPyknj8z) — the team and community can point you in the right direction.
 </Tip>

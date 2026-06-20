@@ -1,46 +1,65 @@
 ---
 title: "Configuration"
-description: "Open Warden's configuration panel and configure every module from Discord."
+description: "How Warden's in-Discord config panel works and what each module controls."
 ---
 
-Warden is configured entirely in Discord — no config files or dashboard required. Use the **`/config`** slash command or the prefix command **`w!config`** (aliases: `cfg`, `configuration`, `setup`) to open the configuration panel.
-
-New to Warden? Start with the [Getting started](/configuration/getting-started) guide first.
+Warden has no web dashboard. You configure everything from Discord using **`/config`** or the prefix command **`w!config`** (also **`cfg`**, **`configuration`**, **`setup`**).
 
 <Note>
-You need **Server Administrator** permission to run the config command.
+  Server **Administrator** permission is required to open the panel.
 </Note>
 
-## Open the configuration panel
+New here? Start with [Getting started](/configuration/getting-started) for a full walkthrough.
+
+## The config panel at a glance
 
 <Steps>
-  <Step title="Run the command">
-    Type **`/config`** or **`w!config`** in any channel Warden can see.
+  <Step title="Launch">
+    Run **`/config`** in a channel Warden can access.
   </Step>
-  <Step title="Select a module">
-    Use the **Select a module to configure...** dropdown to pick the module you want to set up.
+  <Step title="Pick a module">
+    Choose from the **Select a module to configure...** menu at the bottom of the embed.
   </Step>
-  <Step title="Save your changes">
-    Most settings save automatically when you interact with menus and buttons. Some flows (like shift types or log messages) have explicit **Save** buttons — click those when you're done.
+  <Step title="Adjust and save">
+    Update toggles, channels, and roles. Click **Save** when a flow provides one.
   </Step>
 </Steps>
 
-<img src="/images/config.png" alt="Warden configuration panel in Discord" />
+<Frame caption="The Warden configuration panel — module picker at the bottom">
+  <img src="/images/config.png" alt="Warden configuration panel in Discord" />
+</Frame>
 
-## Available modules
+## Module directory
 
-| Module | Description |
-| --- | --- |
-| [Permissions](/modules/permissions) | Staff, Admin, and Management roles used across Warden |
-| [Roblox Moderation](/modules/roblox-moderation) | Punish players in your ER:LC server from Discord |
-| [Verification](/modules/verification) | Link Discord accounts to Roblox profiles |
-| [Shift Logging](/modules/shift-logging) | Track staff shift hours and on-duty status |
-| [ER:LC Server Logs](/modules/erlc-logs) | Real-time join, leave, kill, modcall, and command logs |
-| [Sessions](/modules/sessions) | Start, poll, and announce roleplay sessions |
-| [Infractions](/modules/infractions) | Issue and track staff disciplinary actions |
-| [Staff Feedback](/modules/staff-feedback) | Let members submit feedback on staff |
-| [Applications](/modules/applications) | Custom application forms with review workflows |
+Each row links to a dedicated page with commands, settings, and tips.
+
+<AccordionGroup>
+  <Accordion title="Access & roles">
+    **[Permissions](/modules/permissions)** — Staff, Admin, and Management role tiers used across commands and approval flows.
+  </Accordion>
+  <Accordion title="ER:LC & in-game">
+    **[Roblox Moderation](/modules/roblox-moderation)** — Issue in-game punishments from Discord.
+
+    **[ER:LC Server Logs](/modules/erlc-logs)** — Stream joins, leaves, kills, modcalls, and commands.
+
+    **[Sessions](/modules/sessions)** — Polls, starts, and session announcements.
+
+    All three require [ER:LC integration](/configuration/erlc-integration).
+  </Accordion>
+  <Accordion title="Staff operations">
+    **[Shift Logging](/modules/shift-logging)** — On-duty tracking, quotas, and leaderboards.
+
+    **[Infractions](/modules/infractions)** — Internal staff discipline with optional approval.
+
+    **[Staff Feedback](/modules/staff-feedback)** — Member-submitted ratings on staff.
+  </Accordion>
+  <Accordion title="Community">
+    **[Verification](/modules/verification)** — Roblox account linking and role gating.
+
+    **[Applications](/modules/applications)** — Custom forms with reviewer workflows.
+  </Accordion>
+</AccordionGroup>
 
 <Tip>
-Need help? Click **Support** on the configuration panel or join the [Support Server](https://discord.gg/9mKPyknj8z).
+  The panel includes a **Support** button that links to the [Support Server](https://discord.gg/9mKPyknj8z) if you hit a wall during setup.
 </Tip>

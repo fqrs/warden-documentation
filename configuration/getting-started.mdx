@@ -1,61 +1,59 @@
 ---
 title: "Getting started"
-description: "Learn how to set up Warden and enable modules for your server."
+description: "Invite Warden, connect ER:LC, and enable your first modules."
 ---
 
-Follow these steps to get Warden running on your ER:LC Discord server.
+This guide walks you from a fresh invite to a working setup. Most servers finish in under fifteen minutes if you already have an ER:LC API key.
 
-## Prerequisites
+## Before you begin
 
-Before configuring modules, make sure you have:
+<Check>Discord **Server Administrator** permission</Check>
+<Check>Warden [invited](https://discord.com/oauth2/authorize?client_id=1506630562113130657) with the permissions the invite requests</Check>
+<Check>ER:LC **API key** ready if you want moderation, logs, or sessions — see [ER:LC integration](/configuration/erlc-integration)</Check>
 
-- **Server Administrator** permission in your Discord server
-- Warden [invited](https://discord.com/oauth2/authorize?client_id=1506630562113130657) with the required permissions
-- An ER:LC private server **API key** if you plan to use moderation, logs, or sessions — see [ER:LC integration](/configuration/erlc-integration)
-
-## How to enable modules
+## Quick setup
 
 <Steps>
-  <Step title="Open the config panel">
-    Run **`/config`** or **`w!config`** in your server.
+  <Step title="Invite and verify the bot">
+    After inviting Warden, run **`/ping`** in any channel. A response confirms the bot is online and can read messages there.
   </Step>
-  <Step title="Select a module">
-    Use the **Select a module to configure...** dropdown at the bottom of the panel.
+  <Step title="Assign staff tiers">
+    Open **`/config`** → **Permissions** and set your **Staff**, **Admin**, and **Management** roles. Nearly every command checks these first. Details: [Permissions](/modules/permissions).
   </Step>
-  <Step title="Enable the module">
-    Most modules have an **Enable / Disable** toggle. Set the module to **Enabled** before using its features.
+  <Step title="Link ER:LC (optional but common)">
+    Run **`/erlc link`** with your private server API key. Skip this step only if you are using Discord-only modules like verification or applications.
   </Step>
-  <Step title="Set required channels and roles">
-    Each module prompts you to pick channels, roles, or other options. Configure these before going live.
+  <Step title="Enable modules one at a time">
+    In **`/config`**, pick a module from the dropdown, flip it to **Enabled**, and fill in the channels and roles it asks for.
+  </Step>
+  <Step title="Smoke-test">
+    Try one command from each enabled module — for example **`/verify`**, **`/shift manage`**, or **`/punish`** — using the [command reference](/configuration/commands).
   </Step>
 </Steps>
 
-## Module configuration
+## Suggested order for new servers
 
-Once a module is enabled, you can return to its settings at any time:
+Not every server needs every module. This order avoids rework:
 
-1. Run **`/config`** or **`w!config`**
-2. Select the module from the dropdown
-3. Update channels, roles, embeds, or advanced options
-4. Save where prompted (some flows, like shift types and log messages, require clicking **Save**)
+| Order | What | Why |
+| --- | --- | --- |
+| 1 | [Permissions](/modules/permissions) | Unlocks the correct command access for your team |
+| 2 | [ER:LC integration](/configuration/erlc-integration) | Required before moderation, logs, or sessions |
+| 3 | [Verification](/modules/verification) | Gate access before opening staff tools to everyone |
+| 4 | Everything else | Pick modules based on how your staff team runs day-to-day |
 
-## Recommended setup order
+## Working with the config panel
 
-<Steps>
-  <Step title="Permissions">
-    Set [Staff, Admin, and Management roles](/modules/permissions) first — other modules depend on them.
-  </Step>
-  <Step title="ER:LC integration">
-    Link your server with [`/erlc link`](/configuration/erlc-integration).
-  </Step>
-  <Step title="Core modules">
-    Enable the modules your server needs: moderation, verification, shifts, logs, sessions, and more.
-  </Step>
-  <Step title="Test commands">
-    Use the [commands reference](/configuration/commands) to verify everything works.
-  </Step>
-</Steps>
+All Warden settings live in Discord. Run **`/config`** or **`w!config`** anytime to reopen the panel.
 
-<Tip>
-New to Warden? Read through each section of the documentation to familiarize yourself with the features. Join the [Support Server](https://discord.gg/9mKPyknj8z) for help, updates, and community discussions.
-</Tip>
+<AccordionGroup>
+  <Accordion title="How settings are saved">
+    Most toggles and dropdowns save as soon as you interact with them. Flows that involve writing messages — shift types, log templates, embeds — show an explicit **Save** button. Click it before leaving the screen.
+  </Accordion>
+  <Accordion title="Who can open /config">
+    Only members with **Server Administrator** can run the config command. Delegate day-to-day work through Staff/Admin/Management roles instead of sharing admin access.
+  </Accordion>
+  <Accordion title="Where to go next">
+    Deep-dive into [Configuration](/modules/configuration) for a module-by-module overview, or jump straight to the module page you just enabled from the sidebar.
+  </Accordion>
+</AccordionGroup>

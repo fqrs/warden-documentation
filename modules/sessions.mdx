@@ -1,60 +1,56 @@
 ---
 title: "Sessions"
-description: "Configure session announcements, polls, embeds, and automation."
+description: "Poll, launch, and announce ER:LC roleplay sessions from Discord."
 ---
 
-> Start your roleplay sessions with ease — from automatic starts and shutdowns to votes, announcements, and customizable embeds.
-
-The **Sessions** module helps you start, poll, and announce in-game roleplay sessions with customizable embeds and ping settings.
+Sessions turn "who wants to hop on?" into structured votes and polished announcements. Management runs the commands; members see embeds in your chosen channel with optional role pings.
 
 <Note>
-Requires [ER:LC integration](/configuration/erlc-integration).
+  Requires [ER:LC integration](/configuration/erlc-integration) so Warden can read server state and post join details.
 </Note>
 
-## Commands
+## Management commands
 
-- **`/session start`** — Start a roleplay session *(Management)*
-- **`/session vote`** — Send a vote to start the server *(Management)*
-- **`/session end`** — End the current session *(Management)*
-- **`/session full`** — Notify that the server is full *(Management)*
-- **`/session boost`** — Notify that space is available *(Management)*
-
-## How to configure
-
-1. Run **`/config`** or **`w!config`**
-2. Select **Sessions**
-3. Enable the module, set a **Sessions Channel**, and assign **Ping Roles**
-4. Use **Configure other options...** for embeds and session settings
-
-## Module settings
-
-| Setting | Description |
+| Command | Use when… |
 | --- | --- |
-| **Module State** | Enable or disable the module. |
-| **Sessions Channel** | Text channel where session announcements are posted. |
-| **Ping Roles** | Roles mentioned when a session starts. Up to 10 roles. |
+| **`/session vote`** | You want members to vote before starting |
+| **`/session start`** | You are ready to open the server now |
+| **`/session end`** | The session is over |
+| **`/session full`** | The in-game server hit capacity |
+| **`/session boost`** | Slots freed up on a full server |
 
-## Session settings
+## Core settings
 
-Open **Configure other options...** → **Session Settings**:
-
-| Setting | Description |
+| Setting | Purpose |
 | --- | --- |
-| **Auto Start** | Automatically start a session once the required number of poll votes is reached. |
-| **Mention Voters** | Mention users who voted when a session starts. |
-| **Ping @here** | Include `@here` in session announcements. |
-| **Ping @everyone** | Include `@everyone` in session announcements. |
+| **Module State** | Enable session tooling |
+| **Sessions Channel** | Where announcements land |
+| **Ping Roles** | Roles mentioned on start (up to 10) |
 
-## Customize embeds
+Configure under **`/config`** → **Sessions**.
 
-Open **Configure other options...** → **Customize Embeds** to edit these announcement embeds:
+## Advanced options
 
-| Embed | Purpose |
-| --- | --- |
-| **Start Embed** | Posted when a session starts. |
-| **Shutdown Embed** | Posted when a session shuts down. |
-| **Poll Embed** | Posted when a session poll is created. |
-| **Full Embed** | Posted when the in-game server reaches capacity. |
-| **Boost Embed** | Posted when space opens up on a full server. |
+Open **Configure other options...** for behavior and branding.
 
-Each embed supports customization of color, title, description, thumbnail, and image. See [Variables](/configuration/variables#sessions) for available placeholders.
+<Tabs>
+  <Tab title="Session Settings">
+    | Option | Behavior |
+    | --- | --- |
+    | **Auto Start** | Starts automatically when a poll hits the vote threshold |
+    | **Mention Voters** | Pings everyone who voted when the session opens |
+    | **Ping @here** | Adds `@here` to start announcements |
+    | **Ping @everyone** | Adds `@everyone` — use sparingly |
+  </Tab>
+  <Tab title="Customize Embeds">
+    Edit these templates under **Customize Embeds**:
+
+    - **Start Embed** — Session is live
+    - **Shutdown Embed** — Session ended
+    - **Poll Embed** — Vote posted
+    - **Full Embed** — Server full notice
+    - **Boost Embed** — Space available again
+
+    Each supports color, title, description, thumbnail, and image. Placeholders: [Variables → Sessions](/configuration/variables).
+  </Tab>
+</Tabs>

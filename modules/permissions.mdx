@@ -1,28 +1,38 @@
 ---
 title: "Permissions"
-description: "Configure Staff, Admin, and Management roles used across Warden."
+description: "Map Staff, Admin, and Management roles for Warden command access."
 ---
 
-> Restrict Warden features to the right staff tiers by assigning Staff, Admin, and Management roles.
+Before touching other modules, tell Warden which Discord roles map to each staff tier. Commands and approval flows read these roles — they are not tied to Discord's built-in permission names.
 
-The **Permissions** module controls which Discord roles Warden treats as staff tiers. Many commands and modules check these roles before allowing access.
+See [Commands](/configuration/commands) for which tier can run each command.
 
-See the full [commands reference](/configuration/commands) for which commands each role can use.
+## Setup
 
-## How to configure
+<Steps>
+  <Step title="Open Permissions">
+    Run **`/config`** → select **Permissions** from the module menu.
+  </Step>
+  <Step title="Assign roles">
+    Use the role select menus for each tier. You can assign up to **10 roles** per tier.
+  </Step>
+  <Step title="Save and test">
+    Have someone in each tier run a command only their role should access — e.g. Staff tries **`/shift manage`**, Management tries **`/infraction issue`**.
+  </Step>
+</Steps>
 
-1. Run **`/config`** or **`w!config`**
-2. Select **Permissions** from the module dropdown
-3. Use the role select menus to assign roles
+## Role tiers
 
-## Settings
-
-| Setting | Description |
+| Tier | Purpose |
 | --- | --- |
-| **Staff Role** | Roles given to regular staff members. Select up to 10 roles. |
-| **Admin Role** | Roles given to administrators with elevated access. Select up to 10 roles. |
-| **Management Role** | Roles given to management. Used for approval flows (for example, infraction approval). Select up to 10 roles. |
+| **Staff** | Day-to-day moderation, shifts, and application review |
+| **Admin** | Elevated shift and punishment management |
+| **Management** | Sessions, infractions, ER:LC linking, and approval gates |
 
 <Note>
-Configure permissions before enabling other modules. Several features — including infraction approval — rely on these role tiers.
+  Infraction **Require Approval** sends pending actions to Management. Set those roles before enabling infractions with approval turned on.
 </Note>
+
+## How tiers stack
+
+Members with multiple configured roles get the highest tier they qualify for. Server Administrators bypass tier checks for admin-only Discord commands like **`/config`**, but should still hold a Management role if they need management commands without Discord admin.
