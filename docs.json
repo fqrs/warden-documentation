@@ -12,7 +12,24 @@
     "pages": [
       {
         "group": "Getting Started",
-        "pages": ["index"]
+        "pages": [
+          "index",
+          "modules/configuration"
+        ]
+      },
+      {
+        "group": "Modules",
+        "pages": [
+          "modules/permissions",
+          "modules/roblox-moderation",
+          "modules/verification",
+          "modules/shift-logging",
+          "modules/erlc-logs",
+          "modules/sessions",
+          "modules/infractions",
+          "modules/staff-feedback",
+          "modules/applications"
+        ]
       }
     ],
     "global": {

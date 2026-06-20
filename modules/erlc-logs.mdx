@@ -1,0 +1,62 @@
+---
+title: "ER:LC Server Logs"
+description: "Configure real-time join, leave, kill, modcall, and command logs."
+---
+
+The **ER:LC Server Logs** module streams in-game events to Discord in real time — player joins, leaves, kills, modcalls, and command usage.
+
+## How to configure
+
+1. Run **`/config`** or **`w!config`**
+2. Select **ER:LC Server Logs**
+3. Use **Edit configuration options...** to configure each log type individually
+
+## Log types
+
+Each log type can be configured separately with these options:
+
+| Log type | Default message |
+| --- | --- |
+| **Join Logs** | Player joined the server |
+| **Leave Logs** | Player left the server |
+| **Kill Logs** | Killer killed a player |
+| **Modcall Logs** | Moderator responded to a modcall |
+| **Command Logs** | Player used an in-game command |
+
+## Per-log settings
+
+When editing a log type, you can configure:
+
+| Setting | Description |
+| --- | --- |
+| **Enable / Disable** | Turn the log type on or off. |
+| **Log Channel** | Text channel where logs are sent. |
+| **Edit Message** | Customize the log message template. |
+| **Variables** | View available placeholders for your message. |
+
+## Message variables
+
+Join and leave logs support these placeholders:
+
+**Player**
+
+- `{player.name}` — Roblox username
+- `{player.id}` — Roblox user ID
+- `{player.hyperlink}` — Clickable player link
+
+**Time**
+
+- `{time}` — Short date and time
+- `{time:f}` — Short date and time (alternate format)
+- `{time:F}` — Long date and time
+- `{time:d}` — Short date
+- `{time:D}` — Long date
+- `{time:t}` — Short time
+- `{time:T}` — Long time
+- `{time:R}` — Relative time (for example, "5 minutes ago")
+
+Kill, modcall, and command logs use similar variable patterns with context-specific fields like `{killer}`, `{killed}`, `{command}`, and `{moderator}`.
+
+<Tip>
+Click **Save** after editing a log type. Changes are not applied until you save.
+</Tip>

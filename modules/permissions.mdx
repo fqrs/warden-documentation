@@ -1,0 +1,24 @@
+---
+title: "Permissions"
+description: "Configure Staff, Admin, and Management roles used across Warden."
+---
+
+The **Permissions** module controls which Discord roles Warden treats as staff tiers. Many commands and modules check these roles before allowing access.
+
+## How to configure
+
+1. Run **`/config`** or **`w!config`**
+2. Select **Permissions** from the module dropdown
+3. Use the role select menus to assign roles
+
+## Settings
+
+| Setting | Description |
+| --- | --- |
+| **Staff Role** | Roles given to regular staff members. Select up to 10 roles. |
+| **Admin Role** | Roles given to administrators with elevated access. Select up to 10 roles. |
+| **Management Role** | Roles given to management. Used for approval flows (for example, infraction approval). Select up to 10 roles. |
+
+<Note>
+Configure permissions before enabling other modules. Several features — including infraction approval — rely on these role tiers.
+</Note>

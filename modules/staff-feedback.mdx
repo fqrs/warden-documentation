@@ -1,0 +1,32 @@
+---
+title: "Staff Feedback"
+description: "Configure the staff feedback channel and module settings."
+---
+
+The **Staff Feedback** module lets server members submit structured feedback on staff members.
+
+## How to configure
+
+1. Run **`/config`** or **`w!config`**
+2. Select **Staff Feedback**
+3. Enable the module and set a **Feedbacks Channel**
+
+## Settings
+
+| Setting | Description |
+| --- | --- |
+| **Module State** | Enable or disable the module. |
+| **Feedbacks Channel** | Text channel where submitted feedback is posted. |
+
+## Default embed
+
+Feedback submissions use an embed with these defaults:
+
+| Field | Default |
+| --- | --- |
+| **Color** | `#656dff` |
+| **Author Name** | `@{submitter.name}` |
+| **Title** | Staff Feedback |
+| **Description** | Staff member, rating, and reason |
+
+Supported variables include `{staff.mention}`, `{feedback.rating}`, and `{feedback.reason}`.

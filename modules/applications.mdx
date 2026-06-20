@@ -1,0 +1,60 @@
+---
+title: "Applications"
+description: "Configure application channels, forms, reviewers, and posting."
+---
+
+The **Applications** module lets you create custom application forms. Members submit answers via DMs, and reviewers accept or deny from Discord.
+
+## How to configure
+
+1. Run **`/config`** or **`w!config`**
+2. Select **Applications**
+3. Enable the module and set your channels
+4. Choose **Button** or **Select Menu** as the apply method
+5. Use **Configure applications...** to create and manage forms
+
+## Module settings
+
+| Setting | Description |
+| --- | --- |
+| **Module State** | Enable or disable the module. |
+| **Logging Channel** | Text channel where application submissions and review actions are logged. |
+| **Application Channel** | Text channel where the apply button or select menu is posted. |
+| **Apply Method** | **Button** or **Select Menu** — how members choose which application to fill out. |
+| **Reviewer Roles** | Roles that can review applications. Defaults to Management roles if not set. |
+
+## Configure applications
+
+Use **Configure applications...** for these actions:
+
+| Action | Description |
+| --- | --- |
+| **Create an Application** | Build a new application with custom questions. |
+| **Applications List** | View all configured applications. |
+| **Applications** | Edit an existing application's settings. |
+| **Reviewer Roles** | Set which roles can review submissions. |
+| **Post / Update Applications** | Post or refresh the apply message in your application channel. |
+| **Duplicate Application (Warden+)** | Copy an existing application (Warden+ only). |
+| **Remove an Application** | Delete an application. |
+
+## Per-application settings
+
+Each application supports:
+
+| Field | Description |
+| --- | --- |
+| **Name** | Display name shown on the apply button or menu. |
+| **Description** | Optional description for the application. |
+| **Questions** | Custom questions with minimum length requirements. |
+| **Alert Roles** | Roles pinged when a new submission arrives. |
+| **Accept Roles** | Roles assigned when an applicant is accepted. |
+| **Required Roles** | Roles a member must have to apply. |
+| **Reviewer Roles** | Roles that can review this specific application. |
+| **Is Open** | Whether the application is currently accepting submissions. |
+| **Deny Cooldown** | Days and hours before a denied applicant can reapply. |
+| **Pending Reminder** | Days before reviewers get a reminder about pending submissions. |
+| **Accept Limit** | Maximum number of acceptances allowed. |
+
+<Note>
+The number of applications you can create depends on your plan. The config panel shows your current count (for example, `2/5`).
+</Note>

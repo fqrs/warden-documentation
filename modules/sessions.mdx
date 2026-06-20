@@ -1,0 +1,46 @@
+---
+title: "Sessions"
+description: "Configure session announcements, polls, embeds, and automation."
+---
+
+The **Sessions** module helps you start, poll, and announce in-game roleplay sessions with customizable embeds and ping settings.
+
+## How to configure
+
+1. Run **`/config`** or **`w!config`**
+2. Select **Sessions**
+3. Enable the module, set a **Sessions Channel**, and assign **Ping Roles**
+4. Use **Configure other options...** for embeds and session settings
+
+## Module settings
+
+| Setting | Description |
+| --- | --- |
+| **Module State** | Enable or disable the module. |
+| **Sessions Channel** | Text channel where session announcements are posted. |
+| **Ping Roles** | Roles mentioned when a session starts. Up to 10 roles. |
+
+## Session settings
+
+Open **Configure other options...** → **Session Settings**:
+
+| Setting | Description |
+| --- | --- |
+| **Auto Start** | Automatically start a session once the required number of poll votes is reached. |
+| **Mention Voters** | Mention users who voted when a session starts. |
+| **Ping @here** | Include `@here` in session announcements. |
+| **Ping @everyone** | Include `@everyone` in session announcements. |
+
+## Customize embeds
+
+Open **Configure other options...** → **Customize Embeds** to edit these announcement embeds:
+
+| Embed | Purpose |
+| --- | --- |
+| **Start Embed** | Posted when a session starts. |
+| **Shutdown Embed** | Posted when a session shuts down. |
+| **Poll Embed** | Posted when a session poll is created. |
+| **Full Embed** | Posted when the in-game server reaches capacity. |
+| **Boost Embed** | Posted when space opens up on a full server. |
+
+Each embed supports customization of color, title, description, thumbnail, and image. Session embeds support variables like `{guild.name}`, `{erlc.name}`, `{erlc.owner}`, and `{erlc.code}`.

@@ -1,0 +1,48 @@
+---
+title: "Infractions"
+description: "Configure staff infractions, channels, embeds, and approval settings."
+---
+
+The **Infractions** module lets you issue and track disciplinary actions against staff who violate your team's rules.
+
+## How to configure
+
+1. Run **`/config`** or **`w!config`**
+2. Select **Infractions**
+3. Enable the module and set your channels
+4. Use **Customise Embed** or **Options** for advanced settings
+
+## Module settings
+
+| Setting | Description |
+| --- | --- |
+| **Module State** | Enable or disable the module. |
+| **Infractions Channel** | Text channel where infraction records are posted. |
+| **Infraction Audit Logs** | Text channel for audit/history logs. |
+| **Infraction Types** | Default types: Activity Notice, Verbal Warning, Warning, Strike, Demotion, Termination. |
+
+## Options
+
+Open **Configure other options...** → **Options**:
+
+| Setting | Description |
+| --- | --- |
+| **Notify On Infractions** | DM staff members when they receive an infraction. |
+| **Notify On Voided Infractions** | DM staff members when their infraction is voided. |
+| **Infraction Confirmation** | Show a confirmation prompt before issuing an infraction. |
+| **Require Approval** | Require Management role approval before an infraction is issued. |
+| **Show Infraction Issuer** | Display a button showing who issued the infraction. |
+
+## Customize embed
+
+Open **Configure other options...** → **Customise Embed** to edit the infraction announcement embed:
+
+| Field | Default |
+| --- | --- |
+| **Color** | `#2b2d31` |
+| **Author Name** | `Infracted by: {issuer.name}` |
+| **Title** | `Staff Disciplinary Action` |
+| **Description** | Staff member, infraction type, and reason |
+| **Thumbnail** | `{issuer.icon}` |
+
+Supported variables include `{staff.mention}`, `{infraction.type}`, `{infraction.reason}`, and `{issuer.name}`.
