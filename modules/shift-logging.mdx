@@ -7,21 +7,26 @@ Replace manual hour spreadsheets with clock-in/out commands. Leadership sees who
 
 In **`/config`**, this module appears as **Shifts**.
 
-## Commands by role
+## Staff commands
 
-<Tabs>
-  <Tab title="Staff">
-    - **`/shift manage`** — Clock in, start a break, or clock out
-    - **`/shift time`** — Hours for you or another member
-    - **`/shift active`** — Live on-duty roster
-    - **`/shift leaderboard`** — Ranked by total hours
-  </Tab>
-  <Tab title="Admin">
-    - **`/shift admin`** — Override another member's shift state
-    - **`/shift quota reset`** — Clear quota progress for a shift type
-    - **`/shift quota status`** — Quota completion across staff
-  </Tab>
-</Tabs>
+Requires a configured **Staff** role (or higher).
+
+| Command | What it does |
+| --- | --- |
+| **`/shift manage`** | Clock in, start a break, or clock out |
+| **`/shift time`** | Hours for you or another member |
+| **`/shift active`** | Live on-duty roster |
+| **`/shift leaderboard`** | Ranked by total hours |
+
+## Admin commands
+
+Requires **Admin** (or higher).
+
+| Command | What it does |
+| --- | --- |
+| **`/shift admin`** | Override another member's shift state |
+| **`/shift quota reset`** | Clear quota progress for a shift type |
+| **`/shift quota status`** | Quota completion across staff |
 
 ## Base module settings
 
@@ -32,27 +37,20 @@ In **`/config`**, this module appears as **Shifts**.
 
 ## Shift types
 
-Open **Configure options...** to create the roles your server actually uses — Moderation, Dispatch, Training, and so on.
+Open **Configure options...** to create the roles your server uses — Moderation, Dispatch, Training, and so on.
 
-<AccordionGroup>
-  <Accordion title="Managing types">
-    - **Add Shift Type** — Create a new category
-    - **Edit Shift Type** — Change an existing one
-    - **Remove Shift Type** — Delete a category
-    - **Shift Type List** — Overview of everything configured
-  </Accordion>
-  <Accordion title="Fields on each type">
-    | Field | Example / notes |
-    | --- | --- |
-    | **Shift Name** | `Moderator` |
-    | **Quota** | `10h` or `2d` — required hours per period |
-    | **Staff Limit** | Cap concurrent on-duty staff |
-    | **Nickname Prefix** | Prefix while clocked in |
-    | **Required Roles** | Who may use this type |
-    | **On Duty Role** | Applied during active shift |
-    | **Break Role** | Applied during breaks |
-  </Accordion>
-  <Accordion title="Plan limits">
-    Free servers: up to **3** shift types. **Warden+**: up to **10**. The config panel shows your current count.
-  </Accordion>
-</AccordionGroup>
+| Field | Example / notes |
+| --- | --- |
+| **Shift Name** | `Moderator` |
+| **Quota** | `10h` or `2d` — required hours per period |
+| **Staff Limit** | Cap concurrent on-duty staff |
+| **Nickname Prefix** | Prefix while clocked in |
+| **Required Roles** | Who may use this type |
+| **On Duty Role** | Applied during active shift |
+| **Break Role** | Applied during breaks |
+
+Use **Add Shift Type**, **Edit Shift Type**, **Remove Shift Type**, or **Shift Type List** in the config panel to manage them.
+
+<Note>
+  Free servers: up to **3** shift types. **Warden+**: up to **10**. The config panel shows your current count.
+</Note>

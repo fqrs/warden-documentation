@@ -9,15 +9,7 @@
     "dark": "#1D29C4"
   },
   "appearance": {
-    "default": "dark",
-    "strict": true
-  },
-  "background": {
-    "decoration": "gradient",
-    "color": {
-      "light": "#3646F5",
-      "dark": "#1D29C4"
-    }
+    "default": "dark"
   },
   "fonts": {
     "family": "Inter",
@@ -29,55 +21,45 @@
   "navigation": {
     "pages": [
       {
-        "group": "Getting started",
+        "group": "Overview",
         "pages": [
           "index",
-          "configuration/getting-started",
-          "modules/configuration"
+          "configuration/getting-started"
         ]
       },
       {
-        "group": "Setup & reference",
+        "group": "Setup",
         "pages": [
+          "modules/configuration",
+          "modules/permissions",
           "configuration/erlc-integration",
           "configuration/commands",
-          "configuration/variables",
-          "modules/permissions"
+          "configuration/variables"
         ]
       },
       {
-        "group": "Modules",
+        "group": "Features",
         "pages": [
-          {
-            "group": "In-game & live ops",
-            "pages": [
-              "modules/roblox-moderation",
-              "modules/erlc-logs",
-              "modules/sessions"
-            ]
-          },
-          {
-            "group": "Staff & community",
-            "pages": [
-              "modules/shift-logging",
-              "modules/infractions",
-              "modules/staff-feedback",
-              "modules/verification",
-              "modules/applications"
-            ]
-          }
+          "modules/roblox-moderation",
+          "modules/verification",
+          "modules/shift-logging",
+          "modules/erlc-logs",
+          "modules/sessions",
+          "modules/infractions",
+          "modules/staff-feedback",
+          "modules/applications"
         ]
       }
     ],
     "global": {
       "anchors": [
         {
-          "anchor": "Invite Warden",
+          "anchor": "Invite",
           "href": "https://discord.com/oauth2/authorize?client_id=1506630562113130657",
           "icon": "discord"
         },
         {
-          "anchor": "Support Server",
+          "anchor": "Support",
           "href": "https://discord.gg/9mKPyknj8z",
           "icon": "life-ring"
         },
@@ -98,10 +80,6 @@
       {
         "label": "Website",
         "href": "https://wrdnbot.xyz"
-      },
-      {
-        "label": "Support Server",
-        "href": "https://discord.gg/9mKPyknj8z"
       }
     ],
     "primary": {

@@ -9,74 +9,76 @@ Warden primarily uses slash commands. Some actions also work with the **`w!`** p
   Permission tiers come from [Permissions](/modules/permissions). Higher tiers inherit access from lower ones unless noted.
 </Note>
 
-<Tabs>
-  <Tab title="Everyone">
-    Available to any member when the related module is on:
+## Everyone
 
-    | Command | What it does |
-    | --- | --- |
-    | **`/verify`** | Link your Roblox account |
-    | **`/unverify`** | Remove your verification |
-    | **`/apply`** | Start an application |
-    | **`/feedback submit`** | Rate a staff member |
-    | **`/feedback list`** | View feedback for someone on staff |
-    | **`/whois`** | Look up Discord or Roblox info |
-    | **`/help`** | List commands |
-    | **`/ping`** | Bot latency |
-    | **`/invite`** | Warden invite link |
-  </Tab>
-  <Tab title="Staff">
-    Requires a configured **Staff** role (or higher):
+Available to any member when the related module is enabled.
 
-    | Command | What it does |
-    | --- | --- |
-    | **`/punish`** | Warn, kick, ban, or ban BOLO in-game |
-    | **`/punishments view`** | Punishment history for a username |
-    | **`/bolo active`** | List active BOLOs |
-    | **`/shift manage`** | Clock in, break, or clock out |
-    | **`/shift time`** | View shift hours |
-    | **`/shift active`** | Who is on duty now |
-    | **`/shift leaderboard`** | Top staff by hours |
-    | **`/application pending`** | Pending application submissions |
-    | **`/application manage`** | A member's application history |
-    | **`/feedback remove`** | Delete a feedback entry by ID |
-  </Tab>
-  <Tab title="Admin">
-    Requires **Admin** (or higher):
+| Command | What it does |
+| --- | --- |
+| **`/verify`** | Link your Roblox account |
+| **`/unverify`** | Remove your verification |
+| **`/apply`** | Start an application |
+| **`/feedback submit`** | Rate a staff member |
+| **`/feedback list`** | View feedback for someone on staff |
+| **`/whois`** | Look up Discord or Roblox info |
+| **`/help`** | List commands |
+| **`/ping`** | Bot latency |
+| **`/invite`** | Warden invite link |
 
-    | Command | What it does |
-    | --- | --- |
-    | **`/punishment manage`** | Edit or remove a punishment by ID |
-    | **`/shift admin`** | Manage another member's shift |
-    | **`/shift quota reset`** | Reset quota data for a shift type |
-    | **`/shift quota status`** | Quota progress for all staff |
-  </Tab>
-  <Tab title="Management">
-    Requires **Management** (or Server Administrator):
+## Staff
 
-    | Command | What it does |
-    | --- | --- |
-    | **`/session start`** | Start a roleplay session |
-    | **`/session vote`** | Open a session vote |
-    | **`/session end`** | End the current session |
-    | **`/session full`** | Announce server is full |
-    | **`/session boost`** | Announce slots opened up |
-    | **`/infraction issue`** | Issue a staff infraction |
-    | **`/infraction list`** | List infractions for a member |
-    | **`/infraction manage`** | Manage an infraction by ID |
-    | **`/erlc link`** | Link ER:LC API key |
-    | **`/erlc unlink`** | Remove ER:LC link |
-  </Tab>
-  <Tab title="Server admin">
-    Discord **Server Administrator** only:
+Requires a configured **Staff** role (or higher).
 
-    | Command | What it does |
-    | --- | --- |
-    | **`/config`** | Open module configuration |
-    | **`/prefix`** | Change the bot prefix |
-    | **`/forceverify`** | Force-verify a user and apply roles |
-  </Tab>
-</Tabs>
+| Command | What it does |
+| --- | --- |
+| **`/punish`** | Warn, kick, ban, or ban BOLO in-game |
+| **`/punishments view`** | Punishment history for a username |
+| **`/bolo active`** | List active BOLOs |
+| **`/shift manage`** | Clock in, break, or clock out |
+| **`/shift time`** | View shift hours |
+| **`/shift active`** | Who is on duty now |
+| **`/shift leaderboard`** | Top staff by hours |
+| **`/application pending`** | Pending application submissions |
+| **`/application manage`** | A member's application history |
+| **`/feedback remove`** | Delete a feedback entry by ID |
+
+## Admin
+
+Requires **Admin** (or higher).
+
+| Command | What it does |
+| --- | --- |
+| **`/punishment manage`** | Edit or remove a punishment by ID |
+| **`/shift admin`** | Manage another member's shift |
+| **`/shift quota reset`** | Reset quota data for a shift type |
+| **`/shift quota status`** | Quota progress for all staff |
+
+## Management
+
+Requires **Management** (or Server Administrator).
+
+| Command | What it does |
+| --- | --- |
+| **`/session start`** | Start a roleplay session |
+| **`/session vote`** | Open a session vote |
+| **`/session end`** | End the current session |
+| **`/session full`** | Announce server is full |
+| **`/session boost`** | Announce slots opened up |
+| **`/infraction issue`** | Issue a staff infraction |
+| **`/infraction list`** | List infractions for a member |
+| **`/infraction manage`** | Manage an infraction by ID |
+| **`/erlc link`** | Link ER:LC API key |
+| **`/erlc unlink`** | Remove ER:LC link |
+
+## Server administrator
+
+Discord **Server Administrator** only.
+
+| Command | What it does |
+| --- | --- |
+| **`/config`** | Open module configuration |
+| **`/prefix`** | Change the bot prefix |
+| **`/forceverify`** | Force-verify a user and apply roles |
 
 ## ER:LC server
 
