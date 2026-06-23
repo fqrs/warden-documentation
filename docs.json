@@ -58,6 +58,11 @@
           "anchor": "Website",
           "href": "https://wrdnbot.xyz",
           "icon": "globe"
+        },
+        {
+          "anchor": "Dashboard",
+          "href": "https://wrdnbot.xyz/dashboard",
+          "icon": "gear"
         }
       ]
     }
